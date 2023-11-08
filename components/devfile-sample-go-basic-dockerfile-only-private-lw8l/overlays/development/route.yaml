@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-go-basic-dockerfile-only-private-lw8l
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-go-basic-dockerfile-only-private-lw8l
+    app.kubernetes.io/part-of: mc-golang-nested
+  name: devfile-sample-go-basic-dyrbd
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: devfile-sample-go-basic-dockerfile-only-private-lw8l
+    weight: 100
+status: {}
